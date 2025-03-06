@@ -15,6 +15,17 @@ class CompareStrings {
         return true;
     }
 
+    public static String Substring(int start, int end, String str) {
+        if (start == end) {
+            return str;
+        }
+        String ans = "";
+        for (int i = start; i < end; i++) {
+            ans += str.charAt(i);
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -33,5 +44,15 @@ class CompareStrings {
         System.out.println("After comparing two strings with .equals()");
         System.out.println(str1.equals(str2));
 
+        // taking input from user for starting and ending of a number
+        System.out.println("Enter starting and ending index: (end exclusive)");
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+
+        System.out.println("substring using charAt(). ");
+        System.out.println(Substring(start, end, str1));
+
+        System.out.println("substring using buildIn substring(). ");
+        System.out.println(str1.substring(start, end));
     }
 }
