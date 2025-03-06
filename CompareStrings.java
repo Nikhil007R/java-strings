@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 class CompareStrings {
@@ -24,6 +25,13 @@ class CompareStrings {
             ans += str.charAt(i);
         }
         return ans;
+    }
+
+    public static void ToCharArray(String str, char arr[]) {
+
+        for (int i = 0; i < str.length(); i++) {
+            arr[i] = str.charAt(i);
+        }
     }
 
     public static void main(String[] args) {
@@ -54,5 +62,28 @@ class CompareStrings {
 
         System.out.println("substring using buildIn substring(). ");
         System.out.println(str1.substring(start, end));
+
+        // creating array without toCharArray()
+        char arr1[] = new char[str1.length()];
+
+        // calling method for storing values in arr1
+        ToCharArray(str1, arr1);
+        // creating an array to store string characters using toCharArray;
+        char[] arr2 = str1.toCharArray();
+
+        System.out.println("without using toCharArray");
+        for (int i = 0; i < arr1.length; i++) {
+            System.out.print(arr1[i] + " ");
+        }
+        System.out.println();
+        System.out.println("with using toCharArray");
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.print(arr2[i] + " ");
+        }
+        System.out.println();
+
+        // checking if they are equal
+        System.out.println("Check if they are equal ");
+        System.out.println(Arrays.equals(arr1, arr2));
     }
 }
